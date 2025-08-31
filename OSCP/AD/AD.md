@@ -106,8 +106,7 @@ username/username<br>
 `enum_db            #show DBs`<br>
 `select * from   <DB name>.INFORMATION_SCHEMA.TABLES  #show tables`<br>
 
-**cmd comman**
-
+**cmd command**<br>
 `EXEC sp_configure 'show advanced options', 1;`<br>
 `RECONFIGURE;`<br>
 `EXEC sp_configure 'xp_cmdshell', 1;`<br>
