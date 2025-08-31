@@ -1,11 +1,11 @@
 ## Enumeration Checklist
 
-<set your variables>
-target=<br>
+\<set your variables\>
+```target=<br>
 user=<br>
 pass=<br>
 ip=<br>
-domain=<br>
+domain=<br>```
 
 # 21 FTP
 
