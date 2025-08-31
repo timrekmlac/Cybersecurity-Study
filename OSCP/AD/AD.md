@@ -1,3 +1,4 @@
+```bash
 ## Enumeration Checklist
 
 # set your variables
