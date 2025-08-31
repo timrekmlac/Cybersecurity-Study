@@ -7,7 +7,7 @@ pass=
 ip=
 domain=
 
-#21 FTP
+# 21 FTP
 
 hydra -l <user list> -P <password list> ftp://$ip
 
