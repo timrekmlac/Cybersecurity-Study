@@ -47,7 +47,8 @@ username/username<br>
 `smbclient //[ip]/[share] -N   #Enumerate Files`<br>
 
 
-***With Pass***
+
+***With Pass***<br>
 `lookupsid.py  $domain$user:$pass@$domain`<br>
 `lookupsid.py  #domain/$user:$pass@$ip | grep SidTypeUser | cut -d " " -f 2 | cut -d '\' -f 2<br>
 > [!IMPORTANT]
