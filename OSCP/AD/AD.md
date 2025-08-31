@@ -19,13 +19,13 @@ password/password
 username/username
 
 
-#53 DNS
+# 53 DNS
 
 dig @$ip version.bind CHAOS TXT
 dig axfr @$ip $domain     
 dnsenum $domain
 
-#135 RCP
+# 135 RCP
 
 rpcclient -U '' -N $ip
 rpcclient -U '$user%$pass' $ip 
@@ -36,7 +36,7 @@ rpcclient -U '$user%$pass' $ip
 
 nmblookup -A $ip
 
-＃445 SMB
+＃ 445 SMB
 <Without Pass>
 
 enum4linux -a $ip
@@ -71,7 +71,7 @@ smbclient.py '[domain]/[user]:[pass]@[ip/host] -k -no-pass - Kerberos auth
 manspider.py --threads 256 [IP/CIDR] -u [username] -p [pass] [options]
 
 
-#88 Kerberoas
+# 88 Kerberoas
 
 nmap --script=krb5-enum-users --script-args='userdb=/usr/share/seclists/Usernames/xato-net-10-million-usernames.txt' -p88 $ip
 
@@ -86,7 +86,7 @@ kerbrute -domain #domain -dc $ip -users /usr/share/wordlists/seclists/Usernames/
 kerbrute -domain $domain -dc $ip  -users /usr/share/wordlists/seclists/Usernames/xato-net-10-million-usernames.txt -t 100
 
 
-#389 LDAP
+# 389 LDAP
 
 <Without Pass>
 ldapsearch -H ldap://$ip -x -b "DC=oscp,DC=exam" 
@@ -104,7 +104,7 @@ neo4j console                #config file; /usr/share/neo4j/conf
 ./Bloodhound  --no-sandbox
 
 
-#1433 MSSQL
+# 1433 MSSQL
 
 impacket-mssqlclient sql_svc:Dolphin1@10.10.138.148 -windows-auth  #Windows login
 impacket-mssqlclient sql_svc:Dolphin1@10.10.138.148   #user login
@@ -145,10 +145,10 @@ https://kwcsec.gitbook.io/the-red-team-handbook/infrastructure/sql/ms-sql/privil
 https://www.bordergate.co.uk/attacking-mssql/
 
 
-#3389 RDP
+# 3389 RDP
 
 xfreerdp /u:$user /p:$pass /v:$ip /cert:ignore +clipboard
 
-#5985 WINRM
+# 5985 WINRM
 
 evil-winrm -i $ip -u $user -p $pass
