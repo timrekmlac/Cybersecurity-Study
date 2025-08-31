@@ -121,7 +121,7 @@ username/username
 
 # 1433 MSSQL
 
-`impacket-mssqlclient sql_svc:Dolphin1@10.10.138.148 -windows-auth  #Windows login`
+`impacket-mssqlclient sql_svc:Dolphin1@10.10.138.148 -windows-auth`  > Windows login
 
 `impacket-mssqlclient sql_svc:Dolphin1@10.10.138.148   #user login`
 
