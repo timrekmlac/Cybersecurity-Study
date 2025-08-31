@@ -21,35 +21,35 @@ username/username
 
 # 53 DNS
 
-dig @$ip version.bind CHAOS TXT
-dig axfr @$ip $domain     
-dnsenum $domain
+`dig @$ip version.bind CHAOS TXT`
+`dig axfr @$ip $domain`     
+`dnsenum $domain`
 
 # 135 RCP
 
-rpcclient -U '' -N $ip
-rpcclient -U '$user%$pass' $ip 
+`rpcclient -U '' -N $ip`
+`rpcclient -U '$user%$pass' $ip` 
 
 > enumdomusers      #check the users on the DC
 > queryuser <username>  #query the details of the user
 > querydispinfo 
 
-nmblookup -A $ip
+`nmblookup -A $ip`
 
 # 445 SMB
 
 <Without Pass>
 
-enum4linux -a $ip
-impacket-lookupsid '$domain'/'$user'@$domain -no-pass
+`enum4linux -a $ip
+`impacket-lookupsid $domain/$user@$domain -no-pass`
 
-smbmap  -H 10.10.10.100 --depth 10 -r   #List Shares
-smbclient -N -L //[ip]
-smbclient //[ip]/[share] -N   #Enumerate Files
+`smbmap  -H 10.10.10.100 --depth 10 -r   #List Shares`
+`smbclient -N -L //[ip]`
+`smbclient //[ip]/[share] -N   #Enumerate Files`
 
 
 <With Pass>
-lookupsid.py  $domain/$user:$pass@$domain
+`lookupsid.py  $domain/$user:$pass@$domain`
 
 lookupsid.py  #domain/$user:$pass@$ip | grep SidTypeUser | cut -d " " -f 2 | cut -d '\' -f 2     #This oneliner will create a file with all the domain users
 
