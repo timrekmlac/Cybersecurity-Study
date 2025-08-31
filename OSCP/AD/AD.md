@@ -12,7 +12,8 @@
 
 `hydra -l <user list> -P <password list> ftp://$ip`
 
-- common creds patterns<br>
+common creds patterns<br>
+
 admin/admin<br>
 root/root<br>
 password/password<br>
