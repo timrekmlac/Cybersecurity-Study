@@ -50,7 +50,7 @@ username/username<br>
 
 ***With Pass***<br>
 `lookupsid.py  $domain$user:$pass@$domain`<br>
-`lookupsid.py  #domain/$user:$pass@$ip | grep SidTypeUser | cut -d " " -f 2 | cut -d '\' -f 2<br>
+`lookupsid.py  #domain/$user:$pass@$ip | grep SidTypeUser | cut -d " " -f 2 | cut -d '\' -f 2<br>`
 > [!IMPORTANT]
 > This oneliner will create a file with all the domain users
 
