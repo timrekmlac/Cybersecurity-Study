@@ -98,15 +98,15 @@ username/username
 
 # 389 LDAP
 
-<Without Pass>
+**Without Pass**
 
-`ldapsearch -H ldap://$ip -x -b "DC=oscp,DC=exam" 
+`ldapsearch -H ldap://$ip -x -b "DC=oscp,DC=exam"`
 
 `ldapsearch -x -H ldap://$ip -s base namingcontexts`
 
 `impacket-lookupsid '$domain/guest'@$domain -no-pass`
 
-<With Pass>
+**With Pass**
 
 `lookupsid.py  $domain/$user:$pass@$domain`
 `ldapsearch -x -H ldap://$ip -D '$user' -w '$pass' -s base namingcontexts`
