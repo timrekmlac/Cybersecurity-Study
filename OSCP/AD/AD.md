@@ -36,7 +36,8 @@ rpcclient -U '$user%$pass' $ip
 
 nmblookup -A $ip
 
-＃ 445 SMB
+# 445 SMB
+
 <Without Pass>
 
 enum4linux -a $ip
