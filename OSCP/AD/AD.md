@@ -1,6 +1,7 @@
 ## Enumeration Checklist
 
 \<set your variables\>
+
 `target=`
 
 `user=`
