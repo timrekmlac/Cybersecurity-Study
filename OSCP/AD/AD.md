@@ -39,7 +39,7 @@ username/username<br>
 
 # 445 SMB
 
-**Without Pass**<br>
+- **Without Pass**<br>
 `enum4linux -a $ip`<br>
 `impacket-lookupsid $domain/$user@$domain -no-pass`<br>
 `smbmap  -H 10.10.10.100 --depth 10 -r   #List Shares`<br>
@@ -47,7 +47,7 @@ username/username<br>
 `smbclient //[ip]/[share] -N   #Enumerate Files`<br>
 
 
-**With Pass**
+- **With Pass**
 `lookupsid.py  $domain$user:$pass@$domain`<br>
 `lookupsid.py  #domain/$user:$pass@$ip | grep SidTypeUser | cut -d " " -f 2 | cut -d '\' -f 2<br>
 > [!IMPORTANT]
