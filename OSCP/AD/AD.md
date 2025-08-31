@@ -1,8 +1,8 @@
 ## Enumeration Checklist
 
 \<set your variables\>
-`target=
-user=
+`target=`
+`user=`
 pass=
 ip=
 domain=`
