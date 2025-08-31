@@ -112,7 +112,9 @@ username/username
 `ldapsearch -x -H ldap://$ip -D '$user' -w '$pass' -s base namingcontexts`
 
 `bloodhound-python -d $domain -u $user -p $pass -c all -ns $ip`
-`neo4j console                #config file; /usr/share/neo4j/conf`
+`neo4j console'
+> [!IMPORTANT]
+>  #config file; /usr/share/neo4j/conf
 `./Bloodhound  --no-sandbox`
 
 
