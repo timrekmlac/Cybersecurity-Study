@@ -1,6 +1,6 @@
 ## Enumeration Checklist
 
-\<set your variables\>
+# set your variables
 
 `target=`
 
