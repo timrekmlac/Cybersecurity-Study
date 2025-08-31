@@ -5,7 +5,7 @@
 `user=<br>`
 `pass=<br>`
 `ip=<br>`
-domain=
+`domain=<br>`
 
 # 21 FTP
 
