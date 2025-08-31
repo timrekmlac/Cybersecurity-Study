@@ -1,2 +1,6 @@
-dir /a |  show hidden files
+# Windows Command Cheat Sheet
+
+| Command | Description |
+|---------|-------------|
+| `whoami /priv` | Show privileges |
 
